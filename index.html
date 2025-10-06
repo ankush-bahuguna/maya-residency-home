@@ -31,14 +31,14 @@
         <h1>TRANQUIL RETREAT. MOUNTAIN VIEWS. LAKE ACCESS.</h1>
         <p class="tagline">Your Home Away From Home — Maya Residency Homestay, Adibadri</p>
         <div class="hero-ctas">
-          <a class="btn btn-primary" href="https://www.airbnb.com/l/jYwwrCNw">Book on Airbnb</a>
-          <a class="btn btn-outline" href="tel:+919968502792">Call +91 99685 02792</a>
+          <a class="btn btn-primary" href="https://www.airbnb.com/l/jYwwrCNw" id="primaryBook">Book on Airbnb</a>
+          <a class="btn btn-outline" href="tel:+919968502792" id="callBtn">Call +91 99685 02792</a>
           <a class="btn btn-ghost" href="#location">Get Directions</a>
         </div>
         <div class="quick-info">
           <div><strong>2</strong> Rooms</div>
           <div><strong>Free</strong> Parking</div>
-          <div><strong>Wi-Fi</strong> Available</div>
+          <div><strong>Wi‑Fi</strong> Available</div>
         </div>
       </div>
     </section>
@@ -49,7 +49,7 @@
         <div>
           <h2>About Maya Residency Homestay</h2>
           <p><strong>Your Ideal Refuge</strong></p>
-          <p>Located in Adibadri, Chamoli, Garhwal, Maya Residency Homestay offers a tranquil retreat with mountain views, lake access, and various amenities. Since we first opened our doors, we have been committed to providing our guests with a comfortable and relaxing stay.</p>
+          <p>Located in Adibadri, Chamoli, Garhwal, Maya Residency Homestay offers a tranquil retreat with mountain views, lake access, and various amenities. Our locally-run accommodation is a home away from home.</p>
           <ul class="amenities">
             <li>Daily housekeeping</li>
             <li>Parking and easy access</li>
@@ -92,6 +92,7 @@
         <img src="Living_room.jpeg" alt="Living Room">
         <img src="Room2.jpeg" alt="Room interior">
         <img src="Rainy_Mountain.jpeg" alt="Mountain view">
+        <img src="Winter_Mountain.jpeg" alt="Winter Mountain view">
       </div>
     </section>
 
@@ -100,7 +101,7 @@
       <div class="two-col">
         <div>
           <h2>Location</h2>
-          <p>We are located in Adibadri — easily reachable by road. Click below for directions or open in Google Maps on your phone.</p>
+          <p>We are located in Adibadri — easily reachable by road. Click below for directions or open in Google Maps.</p>
           <p><strong>Address:</strong> Bonli Lagatal, Aadibadri, Dhabhkar, Uttarakhand 246440, India</p>
           <div class="map-wrap">
             <iframe title="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3493.635404126329!2d79.20297027550292!3d30.41655800148073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39096dd5aaf6f8bb%3A0x47a04e924ef92ef3!2sMaya%20Residency%20Homestay!5e0!3m2!1sen!2sin!4v1728200015580!5m2!1sen!2sin" loading="lazy"></iframe>
@@ -128,6 +129,7 @@
               <textarea name="message" rows="4" required></textarea>
             </label>
             <button class="btn btn-primary" type="submit">Send Message</button>
+            <div id="formMsg" class="muted" style="margin-top:10px;display:none"></div>
           </form>
 
           <div class="contact-ctas">
@@ -158,8 +160,6 @@
     </footer>
   </main>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
