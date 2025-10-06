@@ -65,7 +65,7 @@ body{
   align-items:center;
   color:white;
   position:relative;
-  background-image:linear-gradient(to right bottom, rgba(11,110,253,0.35), rgba(3,105,161,0.15)), url('hero-place holder.jpeg');
+  background-image:linear-gradient(to right bottom, rgba(11,110,253,0.35), rgba(3,105,161,0.15)), url('Hero.jpeg');
   background-size:cover;
   background-position:center;
 }
