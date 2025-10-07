@@ -1,19 +1,6 @@
-/* ------------------------------
-   Maya Residency Homestay - Styles
-   Updated for responsive layout & design improvements
---------------------------------- */
-
-/* Global reset and variables */
-:root {
-  --primary: #1a202c;
-  --accent: #3366ff;
-  --text-light: #f5f5f5;
-  --text-dark: #222;
-  --card-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  --bg-light: #fafafa;
-  --bg-dark: #0f172a;
-}
-
+/* ===========================
+   Global Styles
+=========================== */
 * {
   margin: 0;
   padding: 0;
@@ -22,128 +9,128 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: var(--bg-light);
-  color: var(--text-dark);
+  color: #111;
   line-height: 1.6;
+  background-color: #fff;
 }
 
-/* ------------------------------
-   Header / Navigation
---------------------------------- */
+/* ===========================
+   Header & Navigation
+=========================== */
 header {
-  background: #fff;
-  box-shadow: var(--card-shadow);
-  position: fixed;
-  width: 100%;
-  z-index: 10;
-  top: 0;
-}
-
-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 32px;
-  max-width: 1200px;
-  margin: auto;
+  padding: 18px 40px;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
 }
 
-nav a {
-  color: var(--text-dark);
-  text-decoration: none;
-  font-weight: 500;
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
 }
 
 nav ul {
-  list-style: none;
   display: flex;
+  list-style: none;
   gap: 24px;
 }
 
-nav ul li a:hover {
-  color: var(--accent);
+nav ul li a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
+nav ul li a:hover {
+  color: #e63946;
+}
+
+/* ===========================
+   Mobile Nav
+=========================== */
 #navToggle {
   display: none;
+  font-size: 1.8rem;
   cursor: pointer;
-  font-size: 1.6rem;
 }
 
 @media (max-width: 768px) {
   nav ul {
     display: none;
   }
+
   #navToggle {
     display: block;
   }
 }
 
-/* ------------------------------
+/* ===========================
    Hero Section
---------------------------------- */
+=========================== */
 .hero {
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  background: url('images/hero-bg.jpg') center/cover no-repeat;
+  color: #fff;
   text-align: center;
-  color: white;
-  padding: 120px 20px 100px 20px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.65)),
-    url("Hero.jpeg") center/cover no-repeat;
+  padding: 180px 20px 160px;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: auto;
 }
 
 .hero h1 {
   font-size: 2.8rem;
-  margin-bottom: 10px;
-  text-transform: uppercase;
+  margin-bottom: 1rem;
 }
 
-.hero .tagline {
-  font-size: 1.2rem;
-  margin-bottom: 24px;
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
 }
 
-.hero-ctas {
+.hero-buttons {
   display: flex;
-  gap: 14px;
   justify-content: center;
+  gap: 15px;
   flex-wrap: wrap;
-  margin-top: 10px;
-  margin-bottom: 20px;
 }
 
-.hero-ctas .btn {
-  padding: 12px 24px;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 1rem;
+.hero-buttons a {
   text-decoration: none;
-  transition: 0.3s;
-}
-
-.hero-ctas .btn-primary {
-  background: var(--accent);
   color: #fff;
+  background: #e63946;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.3s;
 }
 
-.hero-ctas .btn-outline {
-  background: transparent;
-  border: 2px solid #fff;
-  color: #fff;
+.hero-buttons a:hover {
+  background: #d62839;
 }
 
-.hero-ctas .btn:hover {
-  opacity: 0.9;
-}
-
-/* Mobile optimization */
+/* Mobile hero height fix */
 @media (max-width: 768px) {
   .hero {
-    min-height: 65vh; /* slightly smaller for better fit */
-    padding: 100px 16px 80px 16px;
+    padding: 120px 20px 100px;
     background-position: center top;
   }
 
@@ -151,205 +138,70 @@ nav ul li a:hover {
     font-size: 2rem;
   }
 
-  .hero .tagline {
-    font-size: 1rem;
-  }
-
-  .hero-ctas {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
+  .hero-buttons a {
     width: 100%;
-  }
-
-  .hero-ctas .btn {
-    width: 90%;
-    max-width: 280px;
+    text-align: center;
   }
 }
 
-/* ------------------------------
-   About Section
---------------------------------- */
-.about {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+/* ===========================
+   Contact Form
+=========================== */
+.contact-section {
+  background: #fafafa;
   padding: 80px 20px;
-  max-width: 1200px;
-  margin: auto;
-  gap: 40px;
+  text-align: center;
 }
 
-.about-photo img {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: var(--card-shadow);
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+form {
+  max-width: 500px;
   margin: 0 auto;
-  display: block;
-}
-
-.about-text {
-  flex: 1;
-  min-width: 280px;
-}
-
-.about-text h2 {
-  font-size: 2rem;
-  color: var(--primary);
-  margin-bottom: 16px;
-}
-
-.about-text p {
-  color: #555;
-  margin-bottom: 10px;
-}
-
-/* ------------------------------
-   Rooms Section
---------------------------------- */
-.rooms {
-  background: var(--bg-light);
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.rooms h2 {
-  font-size: 2rem;
-  color: var(--primary);
-  margin-bottom: 40px;
-}
-
-.room-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.room-card {
-  background: #fff;
-  box-shadow: var(--card-shadow);
-  border-radius: 12px;
-  overflow: hidden;
-  text-align: left;
-  transition: transform 0.3s;
-}
-
-.room-card:hover {
-  transform: translateY(-6px);
-}
-
-.room-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.room-card h3 {
-  font-size: 1.3rem;
-  padding: 16px 20px 8px;
-  color: var(--primary);
-}
-
-.room-card p {
-  padding: 0 20px 20px;
-  color: #666;
-  font-size: 0.95rem;
-}
-
-/* ------------------------------
-   Contact Section
---------------------------------- */
-.contact {
-  padding: 80px 20px;
-  background: var(--bg-dark);
-  color: var(--text-light);
-  text-align: center;
-}
-
-.contact h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.contact form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  max-width: 400px;
-  margin: 0 auto;
+  gap: 15px;
 }
 
-.contact input,
-.contact textarea {
-  padding: 12px 14px;
-  border: none;
-  border-radius: 8px;
+input, textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   font-family: inherit;
 }
 
-.contact button {
-  background: var(--accent);
+button {
+  background: #e63946;
   color: #fff;
   border: none;
   padding: 12px;
-  border-radius: 8px;
+  border-radius: 5px;
+  font-weight: 600;
   cursor: pointer;
-  font-weight: 600;
+  transition: background 0.3s;
 }
 
-.contact button:hover {
-  opacity: 0.9;
+button:hover {
+  background: #d62839;
 }
 
-/* Contact CTA Buttons */
-.contact-ctas {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 28px;
-  align-items: center;
+#formMsg {
+  display: none;
+  font-size: 0.95rem;
+  margin-top: 10px;
+  color: #444;
 }
 
-.contact-ctas a {
-  text-align: center;
-  padding: 12px 0;
-  border-radius: 10px;
-  font-weight: 600;
-  text-decoration: none;
-  width: 100%;
-  max-width: 280px;
-}
-
-.contact-ctas .btn-primary {
-  background: var(--accent);
-  color: #fff;
-}
-
-.contact-ctas .btn-outline {
-  background: transparent;
-  border: 2px solid var(--accent);
-  color: var(--accent);
-}
-
-.contact-ctas a:hover {
-  opacity: 0.9;
-}
-
-/* ------------------------------
+/* ===========================
    Footer
---------------------------------- */
+=========================== */
 footer {
   text-align: center;
-  padding: 20px 10px;
-  background: #fff;
-  color: #444;
+  padding: 25px 15px;
+  background: #111;
+  color: #fff;
   font-size: 0.9rem;
-  border-top: 1px solid #eee;
 }
